@@ -11,7 +11,7 @@ import SwiftUI
 struct RecipesFindsApp: App {
     var body: some Scene {
         WindowGroup {
-            MealsView(meals: Meal.sampleData)
+            MealsView()
         }
     }
 }

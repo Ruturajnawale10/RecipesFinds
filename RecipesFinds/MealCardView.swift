@@ -11,7 +11,7 @@ struct MealCardView: View {
     var meal: Meal
     var body: some View {
         HStack {
-            AsyncImage(url: meal.imgUrl) { image in
+            AsyncImage(url: meal.strMealThumb) { image in
                 image.resizable()
                     .aspectRatio(contentMode: .fill)
                     .frame(maxWidth: 100, maxHeight: 120)
@@ -19,7 +19,7 @@ struct MealCardView: View {
                 ProgressView()
             }
             Spacer()
-            Text(meal.name)
+            Text(meal.strMeal)
                 .padding()
                 .font(.title2)
         }
@@ -27,7 +27,7 @@ struct MealCardView: View {
         .frame(width: 330, height: 120)
         .padding(.leading, 10)
         .accessibilityElement(children: .ignore)
-        .accessibilityLabel(meal.name)
+        .accessibilityLabel(meal.strMeal)
     }
 }
 
