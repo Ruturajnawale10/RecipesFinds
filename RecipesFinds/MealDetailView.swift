@@ -22,14 +22,16 @@ struct MealDetailView: View {
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .foregroundStyle(Color.Resolved(red: 203/255, green: 102/255, blue: 95/255))
                     .padding(.top, 10)
+                    .accessibilityLabel("Ingredients are as follows")
                 Spacer()
                 ForEach(mealDetails?.ingredientsList ?? [], id: \.self) { ingredient in
                     HStack(spacing: 8) {
                         Text(ingredient[1])
                             .bold()
                         Text(ingredient[0])
-                            
                     }
+                    .accessibilityElement(children: .ignore)
+                    .accessibilityLabel(ingredient[1] + " " + ingredient[0])
                 }
                 .frame(maxWidth: .infinity, alignment: .leading)
                 Text("Instructions")
@@ -37,6 +39,8 @@ struct MealDetailView: View {
                     .foregroundStyle(Color.Resolved(red: 203/255, green: 102/255, blue: 95/255))
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .padding(.top, 15)
+                    .accessibilityElement(children: .ignore)
+                    .accessibilityLabel("Following are the instructions")
 
                 let mealInstructionsList = mealDetails?.instructionsList ?? []
                 ForEach((mealInstructionsList.indices), id: \.self) { idx in
@@ -44,7 +48,11 @@ struct MealDetailView: View {
                         Text(String(idx + 1) + ".")
                             .bold()
                             .frame(maxHeight: .infinity, alignment: .top)
+                            .accessibilityElement(children: .ignore)
+                            .accessibilityLabel("Step number " + String(idx + 1))
                         Text(mealInstructionsList[idx])
+                            .accessibilityElement(children: .ignore)
+                            .accessibilityLabel(mealInstructionsList[idx])
                         Spacer()
                     }
                 }
