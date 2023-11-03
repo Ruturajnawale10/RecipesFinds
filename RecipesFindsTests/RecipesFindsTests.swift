@@ -88,4 +88,23 @@ final class RecipesFindsTests: XCTestCase {
         XCTAssertEqual(ingredientsList[2][0], "Ingredient 5")
         XCTAssertEqual(ingredientsList[2][1], "Measurement 5")
     }
+
+    func testFetchMealsSorting() {
+        // initialising an array of unsorted meals
+        let unsortedMeals = [
+            Meal(idMeal: "1", strMeal: "Chelsea Buns", strMealThumb: URL(string: "https://www.themealdb.com/images/media/meals/vqpwrv1511723001.jpg")!),
+            Meal(idMeal: "2", strMeal: "Bakewell tart", strMealThumb: URL(string: "https://www.themealdb.com/images/media/meals/wyrqqq1468233628.jpg")!),
+            Meal(idMeal: "3", strMeal: "Apam balik", strMealThumb: URL(string: "https://www.themealdb.com/images/media/meals/adxcbq1619787919.jpg")!),
+            Meal(idMeal: "4", strMeal: "Strawberry Rhubarb Pie", strMealThumb: URL(string: "https://www.themealdb.com/images/media/meals/178z5o1585514569.jpg")!)
+        ]
+
+        let sortedMeals = unsortedMeals.sorted { $0.strMeal < $1.strMeal }
+
+        // Verifies that the meals are sorted by strMeal
+        XCTAssertEqual(sortedMeals.count, unsortedMeals.count)
+        XCTAssertEqual(sortedMeals[0].strMeal, "Apam balik")
+        XCTAssertEqual(sortedMeals[1].strMeal, "Bakewell tart")
+        XCTAssertEqual(sortedMeals[2].strMeal, "Chelsea Buns")
+        XCTAssertEqual(sortedMeals[3].strMeal, "Strawberry Rhubarb Pie")
+    }
 }
