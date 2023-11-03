@@ -86,6 +86,36 @@ struct MealDetail: Codable {
         if (strIngredient10 != nil) && strIngredient10 != "" {
             list.append([strIngredient10!, strMeasure10!])
         }
+        if (strIngredient11 != nil) && strIngredient11 != "" {
+            list.append([strIngredient11!, strMeasure11!])
+        }
+        if (strIngredient12 != nil) && strIngredient12 != "" {
+            list.append([strIngredient12!, strMeasure12!])
+        }
+        if (strIngredient13 != nil) && strIngredient13 != "" {
+            list.append([strIngredient13!, strMeasure13!])
+        }
+        if (strIngredient14 != nil) && strIngredient14 != "" {
+            list.append([strIngredient14!, strMeasure14!])
+        }
+        if (strIngredient15 != nil) && strIngredient15 != "" {
+            list.append([strIngredient15!, strMeasure15!])
+        }
+        if (strIngredient16 != nil) && strIngredient16 != "" {
+            list.append([strIngredient16!, strMeasure16!])
+        }
+        if (strIngredient17 != nil) && strIngredient17 != "" {
+            list.append([strIngredient17!, strMeasure17!])
+        }
+        if (strIngredient18 != nil) && strIngredient18 != "" {
+            list.append([strIngredient18!, strMeasure18!])
+        }
+        if (strIngredient19 != nil) && strIngredient19 != "" {
+            list.append([strIngredient19!, strMeasure19!])
+        }
+        if (strIngredient20 != nil) && strIngredient20 != "" {
+            list.append([strIngredient20!, strMeasure20!])
+        }
         
         return list
     }
