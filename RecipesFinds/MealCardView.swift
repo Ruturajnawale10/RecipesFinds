@@ -25,7 +25,7 @@ struct MealCardView: View {
         }
         .background(Color.Resolved(red: 250/255, green: 170/255, blue: 105/255))
         .frame(width: 330, height: 120)
-        .padding(.leading, 10)
+        .padding(.leading, 30)
         .accessibilityElement(children: .ignore)
         .accessibilityLabel(meal.strMeal)
     }
